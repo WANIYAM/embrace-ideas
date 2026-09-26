@@ -17,7 +17,7 @@ const NAV = [
 
 export function Nav() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mix-blend-difference">
+    <header className="fixed inset-x-0 top-0 z-50">
       <nav className="grid grid-cols-2 items-center gap-4 px-5 py-4 md:grid-cols-4 md:px-10">
         <a href="#top" className="display text-xl tracking-[0.25em] text-bone">
           Noir
@@ -174,7 +174,7 @@ export function Work() {
               <h3 className="display text-xl">{p.name}</h3>
               <Label>{p.year}</Label>
             </div>
-            <Label>{p.type}</Label>
+            <Label className="block">{p.type}</Label>
           </article>
         ))}
       </div>
@@ -210,7 +210,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   }, [to]);
 
   return (
-    <span ref={ref} className="display text-[16vw] leading-none md:text-[9vw]">
+    <span ref={ref} className="display block text-[16vw] leading-none md:text-[9vw]">
       {value}
       {suffix}
     </span>
@@ -227,15 +227,15 @@ export function Impact() {
       <div className="grid gap-10 border-t border-border pt-10 md:grid-cols-3">
         <div>
           <Counter to={98} suffix="%" />
-          <Label>Client retention</Label>
+          <Label className="mt-3 block">Client retention</Label>
         </div>
         <div>
           <Counter to={480} suffix="+" />
-          <Label>Brands shaped</Label>
+          <Label className="mt-3 block">Brands shaped</Label>
         </div>
         <div>
           <Counter to={12} />
-          <Label>Years of craft</Label>
+          <Label className="mt-3 block">Years of craft</Label>
         </div>
       </div>
     </section>
